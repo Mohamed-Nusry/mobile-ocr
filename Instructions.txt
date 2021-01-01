@@ -1,0 +1,27 @@
+This is an android app built with cordova
+
+If you new to cordova it is really easy to getting started with following documentation
+
+https://cordova.apache.org/docs/en/latest/guide/cli/
+
+So basically, in this project you dont have to setup anything. All required dependencies are pre-installed
+
+But you need to have installed cordova CLI to test the app
+
+npm install -g cordova
+
+after you installed cordova cli globally, Go to your cordova project folder and open with CMD
+
+and plug your android device to PC and run following command
+
+cordova run android
+
+if you want to run in emulator (But this app requires camera to capture image. In most cases you cant test this app in an emulator)
+
+cordova emulate android
+
+To build the app
+
+cordova build
+
+When building the app make sure you follow cordova documentation.

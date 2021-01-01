@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="color-scheme" content="light dark">
+        <link rel="stylesheet" href="css/index.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet">
+        <title>Hello World</title>
+    </head>
+    <body>
+        <div class="app">
+            <br>
+            <button type="button" id="openCamera" class="btnCapture">Open Camera</button>
+            <div id="deviceready" class="blink">
+                <!-- <p class="event listening">Connecting to Device</p>
+                <p class="event received">Device is Readysss</p> -->
+            </div>
+        </div>
+
+
+      
+        <h1 style="text-align: center; color: #000; padding: 20px; font-weight: bold;">Mobile Image To Text</h1>
+
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p id="convertedText" style="font-weight: bold; color: #000; padding-left: 10px;"></p>
+            </div>
+        
+        </div>
+        <!-- <textarea name="" id="convertedText" cols="100" rows="10"></textarea> -->
+
+        <p style="font-weight: bold; color: #000; padding-left: 10px;">Note - Please make sure your captured image is in readable quality in order to provide an accurate output.</p>
+        <p style="font-weight: bold; color: #000; padding-left: 10px;">After conversion completed, a modal will be pop up with the output result.</p>
+        <p style="font-weight: bold; color: #000; padding-left: 10px;">Check supported languages from here <span style="color:red"><a href="https://developers.google.com/vision/android/text-overview">Link</a></span></p>
+
+      
+        <script src="cordova.js"></script>
+        <script src="js/index.js"></script>
+
+        <!-- <script>
+            function recognizeText(){
+                navigator.camera.getPicture(onSuccess, onFail, { quality: 100, correctOrientation: true });
+
+                function onSuccess(imageData) {
+                    textocr.recText(0, /*3,*/ imageData, onSuccess, onFail); // removed returnType (here 3) from version 2.0.0
+                    // for sourceType Use 0,1,2,3 or 4
+                    // for returnType Use 0,1,2 or 3 // 3 returns duplicates[see table]
+                    function onSuccess(recognizedText) {
+                            //var element = document.getElementById('pp');
+                            //element.innerHTML=recognizedText;
+                            //Use above two lines to show recognizedText in html
+                            console.log(recognizedText);
+                            alert(recognizedText);
+                    }
+                    function onFail(message) {
+                            alert('Failed because: ' + message);
+                    }
+                }
+                function onFail(message) {
+                    alert('Failed because: ' + message);
+                }
+            }
+
+
+            document.getElementById("openCamera").addEventListener("click", function() {
+                document.getElementById("demo").innerHTML = "Hello World";
+            });
+
+            
+        </script> -->
+    </body>
+</html>
