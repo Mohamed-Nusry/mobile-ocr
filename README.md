@@ -6,16 +6,16 @@ This is a mobile OCR repo which built with Cordova technology. By using this rep
 
 ## Install Dependencies
 For Npm
-npm install
+    npm install
 
 For yarn
-yarn
+    yarn
 
 After installed node modules type following code to add android platform
-cordova platform add android
-cordova platform add ios
+    cordova platform add android
+    cordova platform add ios
 
 ## Run App
-cordova run android
-cordova emulate ios
+    cordova run android
+    cordova emulate ios
 
